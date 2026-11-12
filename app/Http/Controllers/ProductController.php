@@ -70,3 +70,4 @@ class ProductController extends Controller
         return view('pages.products.show', compact('product', 'relatedProducts'));
     }
 }
+

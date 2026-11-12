@@ -99,3 +99,4 @@ class CheckoutController extends Controller
         return redirect()->route('payment.show', ['order_number' => $order->order_number]);
     }
 }
+

@@ -82,3 +82,4 @@ Untuk mengisi tabel dan data parfum awal ke database Supabase Anda, jalankan per
    php artisan migrate --seed
    ```
 3. Semua produk (Noir Absolu, Santal Impérial, Fleur Blanche, dll.) beserta piramida aromanya akan otomatis terisi ke database Supabase Anda!
+

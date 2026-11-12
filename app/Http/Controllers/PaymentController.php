@@ -102,3 +102,4 @@ class PaymentController extends Controller
         return view('pages.invoice', compact('order'));
     }
 }
+
