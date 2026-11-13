@@ -27,6 +27,17 @@ Proyek ini dibangun menggunakan **Laravel 11**, mendukung database modern **Supa
   - Formulir simulasi upload bukti transfer.
 - **Faktur / Invoice Resmi**: Tampilan receipt siap cetak (*Print/Save PDF*) dengan rincian lengkap pesanan.
 
+### 3. Panel Kelola Konten (Atelier CMS & Admin)
+- **URL Akses**: `/admin/login` (Tersedia juga shortcut di bagian *footer* toko).
+- **Akun Default Administrator**:
+  - **Email**: `admin@zeenparfum.com`
+  - **Password**: `admin123`
+- **Fitur Kelola Konten**:
+  - **Dashboard Performa**: Ringkasan omset penjualan terverifikasi (PAID), total pesanan, pesanan butuh verifikasi, dan stok produk.
+  - **Katalog Parfum (CRUD)**: Tambah parfum baru, edit formula, atur piramida aroma (*Top, Heart, Base Notes*), ketahanan (*longevity*), jejak aroma (*sillage*), harga coret diskon, stok unit, dan visibilitas (*Bestseller*, *Unggulan*, *Koleksi Baru*).
+  - **Kategori Aroma (Famille Olfactive)**: Tambah dan kelola klasifikasi aroma (*Woody & Oud*, *Warm Amber*, dll).
+  - **Manajemen Pesanan**: Pantau seluruh transaksi masuk, periksa upload bukti transfer pelanggan, dan ubah status pesanan (*LUNAS / PAID*, *REVIEWING*, *BATAL*).
+
 ---
 
 ## 🚀 Panduan Menjalankan Secara Lokal (Local Development)

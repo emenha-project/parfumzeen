@@ -30,7 +30,7 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
-        $spotlightProduct = Product::where('slug', 'noir-absolu')->first() ?? $featuredProducts->first();
+        $spotlightProduct = Product::where('slug', 'scentplus-noir-oud')->first() ?? $featuredProducts->first();
 
         return view('pages.home', compact(
             'categories',

@@ -345,7 +345,7 @@
 
             <!-- Bottom Copyright & BPOM Badge -->
             <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-neutral-500 text-[11px]">
-                <p>&copy; {{ date('Y') }} ZEEN PARFUM INDONESIA. Hak Cipta Dilindungi Undang-Undang.</p>
+                <p>&copy; {{ date('Y') }} ZEEN PARFUM INDONESIA. Hak Cipta Dilindungi Undang-Undang. • <a href="{{ route('admin.dashboard') }}" class="hover:text-neutral-300 underline underline-offset-4 decoration-neutral-700 transition">Atelier CMS</a></p>
                 <div class="flex items-center space-x-6 mt-4 md:mt-0">
                     <span>Terdaftar BPOM RI</span>
                     <span>Cruelty-Free</span>

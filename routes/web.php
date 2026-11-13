@@ -34,3 +34,25 @@ Route::get('/order/{order_number}/invoice', [PaymentController::class, 'invoice'
 // Editorial / Brand Pages
 Route::view('/atelier', 'pages.atelier')->name('atelier');
 Route::view('/contact', 'pages.contact')->name('contact');
+
+// Admin Panel & Content Management
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [\App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [\App\Http\Controllers\Admin\AuthController::class, 'login'])->name('login.submit');
+    Route::post('/logout', [\App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
+
+    Route::middleware('admin')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+        // Products Catalog Management
+        Route::resource('products', \App\Http\Controllers\Admin\ProductController::class)->except(['show']);
+
+        // Olfactory Categories Management
+        Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->except(['show', 'create', 'edit']);
+
+        // Orders & Transactions Management
+        Route::get('/orders', [\App\Http\Controllers\Admin\OrderController::class, 'index'])->name('orders.index');
+        Route::get('/orders/{order}', [\App\Http\Controllers\Admin\OrderController::class, 'show'])->name('orders.show');
+        Route::patch('/orders/{order}/status', [\App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('orders.updateStatus');
+    });
+});

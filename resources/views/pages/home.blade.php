@@ -19,22 +19,22 @@
             <!-- Badge -->
             <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1 text-[10px] tracking-[0.25em] uppercase font-semibold text-luxury-champagne">
                 <i class="fa-solid fa-sparkles text-xs"></i>
-                <span>NEW ARRIVAL • EXTRAIT DE PARFUM 35%</span>
+                <span>BESTSELLER • PARFUM LOKAL PREMIUM</span>
             </div>
 
             <!-- Title -->
             <h2 class="font-serif-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
-                NOIR <br><span class="italic font-normal font-serif">ABSOLU</span>
+                NOIR <br><span class="italic font-normal font-serif">OUD</span>
             </h2>
 
             <!-- Minimal Subtitle -->
             <p class="text-neutral-300 text-sm sm:text-base font-light tracking-wide max-w-md">
-                Keanggunan kayu oud langka, kehangatan Madagascar bourbon vanilla, dan sentuhan ambergris magnetis. Ketahanan 16+ jam.
+                Oud langka Kamboja, saffron, dan vanilla Madagascar. Ketahanan 16+ jam — kebanggaan parfumeri lokal Indonesia.
             </p>
 
             <!-- Buttons -->
             <div class="flex flex-wrap items-center gap-4 pt-4">
-                <a href="{{ route('products.show', 'noir-absolu') }}"
+                <a href="{{ route('products.show', 'scentplus-noir-oud') }}"
                    class="bg-white text-black hover:bg-neutral-200 transition px-8 py-3.5 text-xs font-bold uppercase tracking-widest flex items-center space-x-2">
                     <span>EKSPLORASI AROMA</span>
                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
@@ -42,7 +42,7 @@
                 <button onclick="quickAddToCart({{ $spotlightProduct->id ?? 1 }})"
                         class="bg-transparent border border-white/80 hover:bg-white hover:text-black transition text-white px-7 py-3.5 text-xs font-bold uppercase tracking-widest flex items-center space-x-2">
                     <i class="fa-solid fa-bag-shopping text-xs"></i>
-                    <span>TAMBAH KE TAS • RP 785.000</span>
+                    <span>TAMBAH KE TAS • RP 489.000</span>
                 </button>
             </div>
         </div>
