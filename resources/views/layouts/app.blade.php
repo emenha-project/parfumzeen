@@ -220,7 +220,7 @@
     </header>
 
     <!-- MOBILE MENU DRAWER -->
-    <div id="mobile-menu-drawer" class="fixed inset-0 z-50 transform -translate-x-full transition-transform duration-300 md:hidden flex">
+    <div id="mobile-menu-drawer" class="fixed inset-0 z-50 transform -translate-x-full transition-transform duration-300 md:hidden flex hidden">
         <div class="w-4/5 max-w-sm bg-white h-full shadow-2xl flex flex-col p-6 z-10 overflow-y-auto">
             <div class="flex items-center justify-between pb-4 border-b border-neutral-200">
                 <div class="font-serif-luxury text-xl font-bold tracking-widest">ZEEN PARFUM</div>
@@ -356,9 +356,9 @@
     </footer>
 
     <!-- 5. SLIDE-OUT MINI CART DRAWER (Sephora Signature Side Drawer) -->
-    <div id="cart-drawer-container" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+    <div id="cart-drawer-container" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0 hidden">
         <!-- Backdrop -->
-        <div id="cart-drawer-backdrop" class="absolute inset-0 bg-black/60 pointer-events-auto"></div>
+        <div id="cart-drawer-backdrop" class="absolute inset-0 bg-black/60 pointer-events-none transition-opacity duration-300"></div>
 
         <!-- Slide Panel -->
         <div id="cart-drawer-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl pointer-events-auto transform translate-x-full transition-transform duration-300 flex flex-col">
@@ -432,14 +432,24 @@
         const drawerCartItems = document.getElementById('drawer-cart-items');
 
         function openDrawer() {
-            cartDrawer.classList.remove('opacity-0', 'pointer-events-none');
-            cartPanel.classList.remove('translate-x-full');
+            cartDrawer.classList.remove('hidden');
+            setTimeout(() => {
+                cartDrawer.classList.remove('opacity-0', 'pointer-events-none');
+                cartBackdrop.classList.remove('pointer-events-none');
+                cartBackdrop.classList.add('pointer-events-auto');
+                cartPanel.classList.remove('translate-x-full');
+            }, 10);
             loadDrawerCart();
         }
 
         function closeDrawer() {
             cartDrawer.classList.add('opacity-0', 'pointer-events-none');
+            cartBackdrop.classList.add('pointer-events-none');
+            cartBackdrop.classList.remove('pointer-events-auto');
             cartPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                cartDrawer.classList.add('hidden');
+            }, 300);
         }
 
         if (openCartBtn) openCartBtn.addEventListener('click', openDrawer);
@@ -454,17 +464,20 @@
 
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuDrawer.classList.remove('-translate-x-full');
+                mobileMenuDrawer.classList.remove('hidden');
+                setTimeout(() => mobileMenuDrawer.classList.remove('-translate-x-full'), 10);
             });
         }
         if (closeMobileMenu) {
             closeMobileMenu.addEventListener('click', () => {
                 mobileMenuDrawer.classList.add('-translate-x-full');
+                setTimeout(() => mobileMenuDrawer.classList.add('hidden'), 300);
             });
         }
         if (mobileMenuOverlay) {
             mobileMenuOverlay.addEventListener('click', () => {
                 mobileMenuDrawer.classList.add('-translate-x-full');
+                setTimeout(() => mobileMenuDrawer.classList.add('hidden'), 300);
             });
         }
 

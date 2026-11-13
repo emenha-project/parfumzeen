@@ -6,6 +6,12 @@ define('LARAVEL_START', microtime(true));
 
 // Setup writable storage directory in /tmp for Vercel Serverless environment
 $storagePath = '/tmp/storage';
+
+// Forward HTTPS scheme properly from Vercel edge reverse proxy
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+    $_SERVER['SERVER_PORT'] = 443;
+}
 $directories = [
     $storagePath . '/app/public',
     $storagePath . '/framework/cache/data',
