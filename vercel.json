@@ -22,7 +22,7 @@
   "env": {
     "APP_NAME": "ZEEN PARFUM",
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
+    "APP_DEBUG": "true",
     "APP_URL": "https://parfumzeen.vercel.app",
     "ASSET_URL": "https://parfumzeen.vercel.app",
     "APP_KEY": "base64:7K5vP4L9d1M6zQ2b8N0wX4jK1lE9rT3vS8uI2oP6mQ4=",
@@ -37,12 +37,7 @@
     "SESSION_LIFETIME": "240",
     "SESSION_ENCRYPT": "false",
     "LOG_CHANNEL": "stderr",
-    "DB_CONNECTION": "pgsql",
-    "DB_HOST": "aws-1-ap-south-1.pooler.supabase.com",
-    "DB_PORT": "5432",
-    "DB_DATABASE": "postgres",
-    "DB_USERNAME": "postgres.moflguwuchzoywlrdzus",
-    "DB_PASSWORD": "zeenparfum2026",
-    "DB_SSLMODE": "require"
+    "DB_CONNECTION": "sqlite",
+    "DB_DATABASE": "/tmp/database.sqlite"
   }
 }

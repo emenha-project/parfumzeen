@@ -316,7 +316,7 @@
                 <div>
                     <h5 class="font-bold uppercase tracking-widest text-neutral-300 mb-4 text-[11px]">Layanan Pelanggan</h5>
                     <ul class="space-y-2.5 text-neutral-400 font-light">
-                        <li><a href="{{ route('contact') }}" class="hover:text-white transition">Lacak Pesanan</a></li>
+                        <li><a href="{{ route('tracking.index') }}" class="hover:text-white transition">Lacak Pesanan</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-white transition">Kebijakan Pengiriman & Free Ongkir</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-white transition">Jaminan 100% Produk Asli</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-white transition">Konsultasi Aroma Pribadi</a></li>

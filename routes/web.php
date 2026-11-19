@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TrackingController;
 use Illuminate\Support\Facades\Route;
 
 // Home
@@ -31,6 +32,10 @@ Route::post('/payment/{order_number}/simulate', [PaymentController::class, 'simu
 Route::post('/payment/{order_number}/proof', [PaymentController::class, 'uploadProof'])->name('payment.proof');
 Route::get('/order/{order_number}/invoice', [PaymentController::class, 'invoice'])->name('order.invoice');
 
+// ===== ORDER TRACKING (seperti Shopee) =====
+Route::get('/tracking', [TrackingController::class, 'index'])->name('tracking.index');
+Route::get('/tracking/{order_number}', [TrackingController::class, 'show'])->name('tracking.show');
+
 // Editorial / Brand Pages
 Route::view('/atelier', 'pages.atelier')->name('atelier');
 Route::view('/contact', 'pages.contact')->name('contact');
@@ -54,5 +59,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/orders', [\App\Http\Controllers\Admin\OrderController::class, 'index'])->name('orders.index');
         Route::get('/orders/{order}', [\App\Http\Controllers\Admin\OrderController::class, 'show'])->name('orders.show');
         Route::patch('/orders/{order}/status', [\App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('orders.updateStatus');
+        Route::patch('/orders/{order}/tracking', [\App\Http\Controllers\Admin\OrderController::class, 'updateOrderStatus'])->name('orders.updateOrderStatus');
     });
 });
